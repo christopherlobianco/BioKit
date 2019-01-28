@@ -1,0 +1,37 @@
+/*
+ * @filename: Research Outline
+ * @author: Christopher LoBianco
+ * @version: 1.0 (01/28/18)
+ */
+ 
+ Gene Expression Data File Formats
+ > GCT (Gene Cluster Text File)
+ > RES (ExpRESsion File)
+ > PCL (Stanford cDNA File)
+ > TXT (Text File)
+ > https://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats 
+ 
+ Gene Expression Databases 
+ > Expression Atlas (Souce of Sample Files)
+ > https://www.ebi.ac.uk/gxa/download.html
+ 
+Units: RPKM, FPKM, & TPM
+> RPKM (Reads per Kilobase Million)
+> FPKM (Fragments per Kilobase Million)
+> TPM (Transcripts per Kilobase Million(
+
+  > RPKM Calculation
+
+    Scaling Factor = (Total reads in sample/1,000,000)            //Normalize for sequencing depth
+    RPM = (Read count/Scaling Factor)                             //Normalize for gene length
+    RPKM = (RPM/gene length [Kilobases])
+  
+  > TPM Calculation 
+
+    RPK = (Read count/gene length [Kilobases]                     //Normalize for gene length first
+    Scaling Factor = (Sum RPK values/1,000,000)                   //Normalize for sequencing depth
+    TPM = (RPK/Scaling Factor)
+ 
+  > TPM vs. RPKM: TPM values in different samples will always be the same (same denominator across samples) 
+  
+BioConductor File Inputs/Outputs
